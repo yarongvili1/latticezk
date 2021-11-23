@@ -42,15 +42,15 @@ Core(TM) i7-10875H CPU @ 2.30GHz CPU and on an NVIDIA GeForce RTX 2060 (with
   0.6 seconds multi-threaded on CPU.
 - Uniform-sampling: 0.42 cycles/bytes on CPU.
 - Gaussian-sampling using Boolean logic:
--- 175M samples/sec for `sigma=215` on CPU.
--- 44M samples/sec for `sigma=215` plus parameter adjustment on CPU.
+    - 175M samples/sec for `sigma=215` on CPU.
+    - 44M samples/sec for `sigma=215` plus parameter adjustment on CPU.
 - Gaussian-sampling using Facct:
--- 52M samples/sec for `sigma=215` on CPU.
--- 32M samples/sec for `sigma=10^6` on CPU.
--- 8M samples/sec for `sigma=2*10^9` on CPU.
--- 270M samples/sec for `sigma=215` on GPU.
--- 260M samples/sec for `sigma=10^6` on GPU.
--- 110M samples/sec for `sigma=2*10^9` on GPU.
+    - 52M samples/sec for `sigma=215` on CPU.
+    - 32M samples/sec for `sigma=10^6` on CPU.
+    - 8M samples/sec for `sigma=2*10^9` on CPU.
+    - 270M samples/sec for `sigma=215` on GPU.
+    - 260M samples/sec for `sigma=10^6` on GPU.
+    - 110M samples/sec for `sigma=2*10^9` on GPU.
 
 ## Dependencies of the code
 
@@ -131,7 +131,7 @@ copying S : cycles=19558594
 syncing A : cycles=14
 syncing S : cycles=14
 matrix mult size: 100 | 3000 | 3000
-multiplying A\*S : cycles=624640209
+multiplying A*S : cycles=624640209
 reordering S : cycles=203436136
 syncing S : cycles=12
 reordering T : cycles=3551412
@@ -153,7 +153,7 @@ multiplying S*C : cycles=1100894758
 copying Z to proof : cycles=493008
 proving : cycles=1265945795
 seeding : cycles=47120994
-multiplying A\*Z and T\*C
+multiplying A*Z and T*C
 matrix mult size: 100 | 3000 | 100
 matrix mult size: 100 | 3000 | 100
 verifying : cycles=117333312
@@ -177,7 +177,7 @@ copying S : cycles=23479787
 syncing A : cycles=14
 syncing S : cycles=14
 matrix mult size: 100 | 3000 | 3000
-multiplying A\*S : cycles=298721086
+multiplying A*S : cycles=298721086
 reordering S : cycles=37623488
 syncing S : cycles=14
 reordering T : cycles=753288
@@ -186,7 +186,7 @@ draw=1
 sampling Y : cycles=88062526
 syncing Y : cycles=14
 matrix mult size: 100 | 3000 | 100
-multiplying A\*Y : cycles=7971630
+multiplying A*Y : cycles=7971630
 copying A to proof : cycles=1552354
 copying T to proof : cycles=1076950
 copying W to proof : cycles=33076
@@ -195,11 +195,11 @@ sampling C : cycles=713244
 syncing C : cycles=14
 copying C to proof : cycles=866114
 matrix mult size: 3000 | 3000 | 100
-multiplying S\*C : cycles=459214512
+multiplying S*C : cycles=459214512
 copying Z to proof : cycles=324588
 proving : cycles=611499680
 seeding : cycles=49589080
-multiplying A\*Z and T\*C
+multiplying A*Z and T*C
 matrix mult size: 100 | 3000 | 100
 matrix mult size: 100 | 3000 | 100
 verifying : cycles=95712133
@@ -246,7 +246,7 @@ See below for success rates over 0.95 obtained in Gaussian sampling on the GPU.
 ## Fast constant-time Gaussian-sampling using Boolean-logic
 
 The fast constant-time Gaussian-sampling using Boolean-logic generates a
-sequence of pseudoranom Guassian samples with parameters chosen at the time of
+sequence of pseudoranom Gaussian samples with parameters chosen at the time of
 code-generation (not in this repository). Its speed is demonstrated by the
 `src/gsampler` tool running on an Intel(R) Core(TM) i7-10875H CPU @ 2.30GHz CPU
 on Linux:
