@@ -1,0 +1,9 @@
+[submodule "gcem"]
+	path = gcem
+	url = https://github.com/kthohr/gcem
+[submodule "eigen"]
+	path = eigen
+	url = https://gitlab.com/libeigen/eigen
+[submodule "quasis-crypto"]
+	path = quasis-crypto
+	url = https://github.com/yarongvili1/quasis-crypto
